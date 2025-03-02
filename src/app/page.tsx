@@ -10,32 +10,38 @@ import AquillaMobile from "../../public/Aquilla.svg";
 
 export default function Home() {
   const [isMobile, setIsMobile] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
-  // Add useEffect to disable body scrolling and detect mobile
   useEffect(() => {
-    // Add overflow-hidden to body
     document.body.style.overflowX = "hidden";
     
-    // Check if mobile
     const checkIfMobile = () => {
       setIsMobile(window.innerWidth <= 1024);
+      setIsLoading(false);
     };
     
-    // Initial check
-    checkIfMobile();
+    // Add small delay to ensure smooth animation
+    const timer = setTimeout(checkIfMobile, 300);
     
-    // Add event listener for resize
     window.addEventListener('resize', checkIfMobile);
     
-    // Cleanup function to restore scrolling when component unmounts
     return () => {
       document.body.style.overflowX = "";
       window.removeEventListener('resize', checkIfMobile);
+      clearTimeout(timer);
     };
   }, []);
 
+  if (isLoading) {
+    return (
+      <div className="loading-container">
+        <div className="loading-spinner"></div>
+      </div>
+    );
+  }
+
   return (
-    <div className="main-container">
+    <div className="main-container animate-fade-in">
       <Header />
       
       <main className="hero-section">
