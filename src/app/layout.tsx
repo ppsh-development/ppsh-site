@@ -4,7 +4,7 @@ import "./globals.css";
 import {Header} from "@/components/header";
 import {Footer} from "@/components/footer";
 import React from "react";
-import {LayoutProvider, useLayout} from "@/app/contexts/LayoutContext";
+import {LayoutProvider} from "@/app/contexts/LayoutContext";
 import {LayoutManager} from "@/app/layoutManager";
 
 const karla = Karla({
