@@ -59,7 +59,7 @@ export function Header() {
               <Link href="/projects" className="text-2xl color-header" onClick={toggleMenu}>Projects</Link>
             </li>
             <li>
-              <Link href="/members" className="text-2xl color-header" onClick={toggleMenu}>Members</Link>
+              <Link href="/members/page" className="text-2xl color-header" onClick={toggleMenu}>Members</Link>
             </li>
             <li>
               <Link href="/blog" className="text-2xl color-header" onClick={toggleMenu}>Blog</Link>

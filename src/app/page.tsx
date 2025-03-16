@@ -1,12 +1,9 @@
 'use client'
 
-import { Header } from "@/components/header";
 import Image from "next/image";
-import Link from "next/link";
 import { useEffect, useState } from "react";
-import { FaGithub, FaTelegram } from "react-icons/fa";
-import AquillaDesktop from "../../public/Aquilla-left.png";
-import AquillaMobile from "../../public/Aquilla.svg";
+import AquilaDesktop from "../../public/Aquilla-left.png";
+import AquilaMobile from "../../public/Aquilla.svg";
 
 export default function Home() {
   const [isMobile, setIsMobile] = useState(false);
@@ -41,9 +38,6 @@ export default function Home() {
   }
 
   return (
-    <div className="main-container animate-fade-in">
-      <Header />
-      
       <main className="hero-section">
         <div className="container mx-auto px-4">
           <div className="hero-content mt-[-150px] md:mt-[-150px] sm:mt-0">
@@ -54,7 +48,7 @@ export default function Home() {
         <div className="hero-image">
           {isMobile ? (
             <Image 
-              src={AquillaMobile} 
+              src={AquilaMobile}
               alt="Aquilla" 
               priority
               width={400}
@@ -67,7 +61,7 @@ export default function Home() {
             />
           ) : (
             <Image 
-              src={AquillaDesktop} 
+              src={AquilaDesktop}
               alt="Aquilla" 
               priority
               width={600}
@@ -81,18 +75,5 @@ export default function Home() {
           )}
         </div>
       </main>
-      
-      <footer className="footer mt-auto py-4 px-4">
-        <p>© PPSh, {new Date().getFullYear()}</p>
-        <div className="social-links">
-          <Link href="https://t.me/ppsh_dev" aria-label="Telegram">
-            <FaTelegram size={24} />
-          </Link>
-          <Link href="https://github.com/ppsh-development" aria-label="GitHub">
-            <FaGithub size={24} />
-          </Link>
-        </div>
-      </footer>
-    </div>
   );
 }
