@@ -1,30 +1,9 @@
 'use client'
-import {useEffect, useState} from "react";
+
+import {useLayout} from "@/app/contexts/LayoutContext";
 
 export default function Page(){
-    const [isMobile, setIsMobile] = useState(false);
-    const [isLoading, setIsLoading] = useState(true);
-
-    useEffect(() => {
-        document.body.style.overflowX = "hidden";
-
-        const checkIfMobile = () => {
-            setIsMobile(window.innerWidth <= 1024);
-            setIsLoading(false);
-        };
-        console.log(isMobile);
-
-        // Add small delay to ensure smooth animation
-        const timer = setTimeout(checkIfMobile, 300);
-
-        window.addEventListener('resize', checkIfMobile);
-
-        return () => {
-            document.body.style.overflowX = "";
-            window.removeEventListener('resize', checkIfMobile);
-            clearTimeout(timer);
-        };
-    }, []);
+    const { isLoading } = useLayout();
 
     if (isLoading) {
         return (

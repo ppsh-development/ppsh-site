@@ -3,6 +3,9 @@ import { Karla } from "next/font/google";
 import "./globals.css";
 import {Header} from "@/components/header";
 import {Footer} from "@/components/footer";
+import React from "react";
+import {LayoutProvider, useLayout} from "@/app/contexts/LayoutContext";
+import {LayoutManager} from "@/app/layoutManager";
 
 const karla = Karla({
 	variable: "--font-karla",
@@ -25,11 +28,15 @@ export default function RootLayout({
 			<body
 				className={`${karla.variable} antialiased`}
 			>
-			<div className="main-container animate-fade-in">
-				<Header/>
-				{children}
-				<Footer/>
-			</div>
+			<LayoutProvider>
+				<LayoutManager>
+					<div className="main-container animate-fade-in">
+						<Header/>
+						{children}
+						<Footer/>
+					</div>
+				</LayoutManager>
+			</LayoutProvider>
 			</body>
 		</html>
 	);

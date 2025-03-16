@@ -1,43 +1,23 @@
 'use client'
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
 import AquilaDesktop from "../../public/Aquilla-left.png";
 import AquilaMobile from "../../public/Aquilla.svg";
+import {useLayout} from "@/app/contexts/LayoutContext";
+import React from "react";
 
 export default function Home() {
-  const [isMobile, setIsMobile] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
+    const { isMobile, isLoading } = useLayout();
 
-  useEffect(() => {
-    document.body.style.overflowX = "hidden";
-    
-    const checkIfMobile = () => {
-      setIsMobile(window.innerWidth <= 1024);
-      setIsLoading(false);
-    };
-    
-    // Add small delay to ensure smooth animation
-    const timer = setTimeout(checkIfMobile, 300);
-    
-    window.addEventListener('resize', checkIfMobile);
-    
-    return () => {
-      document.body.style.overflowX = "";
-      window.removeEventListener('resize', checkIfMobile);
-      clearTimeout(timer);
-    };
-  }, []);
+    if (isLoading) {
+        return (
+            <div className="loading-container">
+                <div className="loading-spinner"></div>
+            </div>
+        );
+    }
 
-  if (isLoading) {
     return (
-      <div className="loading-container">
-        <div className="loading-spinner"></div>
-      </div>
-    );
-  }
-
-  return (
       <main className="hero-section">
         <div className="container mx-auto px-4">
           <div className="hero-content mt-[-150px] md:mt-[-150px] sm:mt-0">
