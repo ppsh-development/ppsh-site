@@ -78,7 +78,6 @@ body {
   max-width: 100%;
   margin: 0 auto;
   position: relative;
-  overflow: visible;
 }
 
 .hero-content {
@@ -155,18 +154,18 @@ body {
     overflow: hidden;
     display: flex;
   }
-  
+
   .hero-content {
     margin-top: 2rem;
     max-width: 100%;
     order: 1;
   }
-  
+
   .hero-content p:first-child {
     font-size: 5rem;
     left: 0 !important;
   }
-  
+
   .hero-image {
     position: relative !important;
     right: 0 !important;
@@ -180,7 +179,7 @@ body {
     align-items: center;
     order: 2;
   }
-  
+
   .hero-image img {
     position: relative;
     right: auto;
@@ -195,15 +194,15 @@ body {
   .hero-content p:first-child {
     font-size: 4rem;
   }
-  
+
   .hero-content p:last-child {
     font-size: 1.5rem;
   }
-  
+
   .main-container {
     padding: 0 0.5rem;
   }
-  
+
   .hero-image {
     transform: none;
     max-width: 100%;
