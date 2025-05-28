@@ -27,20 +27,16 @@ export function Header() {
 
         {/* Desktop menu */}
         <ul className="hidden md:flex items-center">
-          <li>
-            <Link href="/" className="hover:text-gray-300 transition-colors text-xl color-header">Home</Link>
-          </li>
           <li className="ml-6">
             <Link href="/projects" className="hover:text-gray-300 transition-colors text-xl color-header">Projects</Link>
           </li>
           <li className="mx-4">
-            <Image src={SVGIMG} alt={"Aquilla"} width={100} height={100} className="w-auto h-10"/>
+            <Link href={"/"}>
+              <Image src={SVGIMG} alt={"Aquilla"} width={100} height={100} className="w-auto h-10"/>
+            </Link>
           </li>
           <li className="mr-6">
             <Link href="/members" className="hover:text-gray-300 transition-colors text-xl color-header">Members</Link>
-          </li>
-          <li>
-            <Link href="/blog" className="hover:text-gray-300 transition-colors text-xl color-header">Blog</Link>
           </li>
         </ul>
 
@@ -60,9 +56,6 @@ export function Header() {
             </li>
             <li>
               <Link href="/members/page" className="text-2xl color-header" onClick={toggleMenu}>Members</Link>
-            </li>
-            <li>
-              <Link href="/blog" className="text-2xl color-header" onClick={toggleMenu}>Blog</Link>
             </li>
           </ul>
         </div>

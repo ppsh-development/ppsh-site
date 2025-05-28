@@ -27,6 +27,7 @@ export default function RootLayout({
 		<html lang="en">
 			<body
 				className={`${karla.variable} antialiased`}
+				suppressHydrationWarning={true}
 			>
 			<LayoutProvider>
 				<LayoutManager>
