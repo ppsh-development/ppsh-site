@@ -1,0 +1,86 @@
+:root {
+    --user-column-width: 20vw;
+
+}
+
+.borderClass {
+    border: 1px solid #1C1C1C;
+    border-radius: 33px;
+}
+
+.userContainer {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    margin: auto;
+    align-items: center;
+    min-height: 70vh;
+}
+
+.userColumn {
+    display: flex;
+    flex-direction: column;
+    width: var(--user-column-width);
+    margin-right: 3vw;
+    align-items: flex-start;
+}
+
+.userImage {
+    width: var(--user-column-width);
+    height: var(--user-column-width);
+    border-radius: 33px;
+}
+
+.userName {
+    font-size: 3vw;
+    font-weight: bold;
+    text-align: center;
+    width: var(--user-column-width);
+}
+
+.firstColumn {
+    width: 35vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 1.5vw;
+
+}
+
+.secondColumn {
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+}
+
+.aboutMe {
+    font-size: 20px;
+    width: 35vw;
+    height: 20vh;
+    padding: 20px 30px 30px;
+}
+
+.linksContainer {
+    font-size: 20px;
+    width: 20vw;
+    height: 15vh;
+    padding: 20px 30px 30px;
+
+}
+
+
+.categoryHeader {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.columnsContainer {
+    width: fit-content;
+    display: flex;
+}
+
+@media (max-width: 768px) {
+}
+

@@ -1,8 +1,8 @@
 'use client'
 
 import Image from "next/image";
-import AquilaDesktop from "../../public/Aquilla-left.png";
-import AquilaMobile from "../../public/Aquilla.svg";
+import AquilaDesktop from "../../public/logo/Aquilla-left.png";
+import AquilaMobile from "../../public/logo/Aquilla.svg";
 import {useLayout} from "@/app/contexts/LayoutContext";
 import React from "react";
 

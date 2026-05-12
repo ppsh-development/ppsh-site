@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import SVGIMG from "../../public/Aquilla.svg";
+import SVGIMG from "../../public/logo/Aquilla.svg";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
